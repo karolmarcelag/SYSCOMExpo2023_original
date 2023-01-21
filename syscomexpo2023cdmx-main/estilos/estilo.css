@@ -1,0 +1,396 @@
+body
+{
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.datos
+{
+    font-weight: normal;
+}
+
+.asterisco
+{
+    font-weight: normal;
+    color: red;
+}
+
+img
+{
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.info
+{
+    width: 90%;
+    top: 0;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+button
+{
+    width: 100%;
+    height: 50px;
+    color: white;
+    background: #0e57b1;
+    border: #0e57b1;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: hand;
+    margin-top: 10px;
+}
+
+input, select, textarea
+{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 7px;
+    outline: none;
+    margin-bottom: 10px;
+    border: 1px solid #767676;
+    border-radius: 5px;
+}
+
+textarea
+{
+    height: 120px;
+}
+
+.logo
+{
+    background: #1e1e1e;
+    padding: 60px 30px 50px 30px;
+}
+
+.boton1
+{
+    margin-top:50px;
+    margin-bottom: 40px;
+}
+
+.boton2
+{
+    margin-bottom: 40px;
+}
+
+.boton1, .boton2, .boton4
+{
+    height: 100px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: 24px;
+}
+
+.boton3
+{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.boton4
+{
+    /*background-color: rgb(196, 8, 8);*/
+    background-color: #c62828;
+}
+
+.boton5
+{
+    margin-top: -5px;
+}
+
+.g-recaptcha
+{
+    height: 87px;
+}
+
+.container 
+{
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    padding-top: 9px;
+    margin-bottom: 26px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.taller
+{
+    border-radius: 5px;
+    margin-bottom: 15px;
+    line-height: 18.5px;
+    transition: all .2s;
+    border: 1px solid #edeff0;
+    background-color: rgb(255,255,255);
+    color: #333333;
+    box-shadow: 2px 2px 2px 0px #c3c3c3;
+}
+
+.infoTaller
+{
+    margin: 5px;
+}
+
+.izquierda
+{
+    float: left;
+}
+
+.derecha
+{
+    float: right;
+}
+
+.taller:hover
+{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.titulo
+{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.div_instructor
+{
+    text-align: center;
+}
+
+.icono
+{
+    width: 15px;
+    cursor: hand;
+}
+
+.tabla_MisTalleres
+{
+    line-height: 25px;
+    font-size: 14px;
+    width: 104%;
+    margin-left: -2%;
+    padding: 10px;
+}
+
+tr
+{
+    border-bottom: 1px solid #edeff0;
+}
+
+.ocultar_movil
+{
+    display: none;
+}
+
+/* Hide the browser's default checkbox */ 
+.container input
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark
+{
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark
+{
+    background-color: #0f57b1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after 
+{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after 
+{
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after 
+{
+    left: 12px;
+    top: 5px;
+    width: 7px;
+    height: 18px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+@keyframes ldio-7vvtb13lcc {
+    0% { transform: translate(-50%,-50%) rotate(0deg); }
+    100% { transform: translate(-50%,-50%) rotate(360deg); }
+  }
+  .ldio-7vvtb13lcc div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 20px solid #0e57b1;
+    border-top-color: transparent;
+    border-radius: 50%;
+  }
+  .ldio-7vvtb13lcc div {
+    animation: ldio-7vvtb13lcc 1s linear infinite;
+    top: 100px;
+    left: 100px
+  }
+  .loadingio-spinner-rolling-k7dywir643 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: rgba(NaN, NaN, NaN, 0);
+  }
+  .ldio-7vvtb13lcc {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+  }
+  .ldio-7vvtb13lcc div { box-sizing: content-box; }
+
+  .notas
+  {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+
+@media (min-width: 600px) 
+{
+    .checkmark
+    {
+        height: 25px;
+        width: 25px;
+    }
+    .container 
+    {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-left: 35px;
+        margin-bottom: 22px;
+    }
+    .container .checkmark:after
+    {
+        left: 9px;
+        top: 3px;
+        width: 4px;
+        height: 12px;
+        border-width: 0 3px 3px 0;
+    }
+    img 
+    {
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    .boton1, .boton2, .boton4
+    {
+        height: 36px;
+        width: 30%;
+        margin-left: 35%;
+        font-size: 15px;
+    }
+
+    button
+    {
+        height: 36px;
+        font-size: 15px;
+    }
+
+    body
+    {
+        font-size: 14px;
+        background: #fff;
+        color: #000;
+    }
+
+    .datos 
+    {
+        font-weight: normal;
+    }
+
+    .info
+    {
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 0;
+    }
+
+    input, select
+    {
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .qr
+    {
+        width: 20%;
+        margin-left: 40%;
+        margin-bottom: 25px;
+    }
+
+    .boton3 
+    {
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    .tabla_MisTalleres
+    {
+        width: 115%;
+        margin-left: -7.5%;
+        padding: 0;
+    }
+    
+    .ocultar_movil
+    {
+        display: block;
+    }
+}

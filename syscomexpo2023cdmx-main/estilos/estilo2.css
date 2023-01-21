@@ -1,0 +1,39 @@
+body
+{
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-family: system-ui;
+    font-size: 15px;
+}
+
+img
+{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.logo2
+{
+    background: #1e1e1e;
+    padding: 130px;
+}
+
+input
+{
+    position: absolute;
+    top: 0%;
+    font-size: 20px;
+    color: #1e1e1e;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.bienvenido
+{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 63px;
+}
