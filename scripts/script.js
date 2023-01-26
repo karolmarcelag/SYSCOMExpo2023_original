@@ -145,7 +145,7 @@ function generarQR()
     },
     function(respuesta)
     {
-        console.log(respuesta)
+        //console.log(respuesta)
         var datos = JSON.parse(respuesta)
         var url = datos[0]["url"]
         var codigo = "" +
@@ -217,7 +217,7 @@ function buscar_usuario_taller()
         function(resultado)
         {
             var respuesta = parseInt(resultado)
-            console.log(resultado)
+            //console.log(resultado)
             switch(respuesta)
             {
                 case -1:
@@ -438,7 +438,7 @@ function validarCorreo()
         return true
     }
 }
-.0
+
 function mostrarTalleres()
 {
     $.post("funciones/mostrarTalleres.php",
@@ -458,7 +458,7 @@ function mostrarTalleres()
                 {
                     var tabla = JSON.parse(respuesta)
                     tabla_talleres = tabla
-
+                    console.table(tabla_talleres)
                     var codigo = ""
                     for(x=0; x<tabla.length; x++)
                     {
@@ -472,17 +472,28 @@ function mostrarTalleres()
                         var ano = fecha.getFullYear()
                         fecha = (dia+1) + ' ' + meses[mes] + ' ' + ano
 
+                        var registrados = tabla[x]["registrados"]
+                        var capacidad = tabla[x]["capacidad"]
+                        var cssextra = ""
+                        
+                        if(registrados >= capacidad)
+                        {
+                            cssextra = "style = 'cursor: not-allowed; transform: none; background-color: #ebebeb'"
+                        }
                         codigo+=
-                        "<div class='taller' id='taller"+ x +"' onclick='seleccionar("+ x +")'>"+
+                        "<div class='taller' "+ cssextra +" id='taller"+ x +"' onclick='seleccionar("+ x +")'>"+
                             "<div class='infoTaller'>"+
                                 "<div class='izquierda'>"+ hora +"</div><div class='derecha'>"+ fecha +"</div><br>"+
                                 "<div class='titulo'>"+ tabla[x]["titulo"] +"</div>"+
                                 "<div class='div_instructor'><small>Impartido por:</small><br><span>"+ tabla[x]["instructor"] +"</span></div>"+
-                                "<div class='izquierda'><small>Sala: </small>"+ tabla[x]["sala"] +"</div><div class='derecha'><small>Capacidad: </small>10/"+ tabla[x]["capacidad"] +"</div><br>"+
+                                "<div class='izquierda'><small>Sala: </small>"+ tabla[x]["sala"] +"</div><div class='derecha'><small>Capacidad: </small>"+ tabla[x]["registrados"] +"/"+ tabla[x]["capacidad"] +"</div><br>"+
                             "</div>"+
                         "</div>"
+                        
                     }
                     $("#todosTalleres").html(codigo)
+
+                    
                 }
         }
     })
@@ -490,26 +501,41 @@ function mostrarTalleres()
 
 function seleccionar(_id)
 {
+    //var registrados = tabla_talleres[_id]["registrados"]
+    //var capacidad = tabla_talleres[_id]["capacidad"]
     var id = "#taller" + _id
-    switch($(id).css("background-color"))
+
+    /*if(registrados >= capacidad)
     {
-        case "rgb(255, 255, 255)":
-        {
-            $("#taller"+_id+"").css("box-shadow", "2px 2px 2px 0px #c3c3c3")
-            $("#taller"+_id+"").css("background-color", "#c62828")
-            $("#taller"+_id+"").css("color", "#ffffff")
-            $("#taller"+_id+"").css("border", "1px solid #c62828")
-        }
-        break
-        case "rgb(198, 40, 40)":
-        {
-            $("#taller"+_id+"").css("box-shadow", "2px 2px 2px 0px #c3c3c3")
-            $("#taller"+_id+"").css("background-color", "rgb(255, 255, 255)")
-            $("#taller"+_id+"").css("color", "#333333")
-            $("#taller"+_id+"").css("border", "1px solid #edeff0")
-        }
-        break
+        //$("#taller"+_id+"").css("box-shadow", "2px 2px 2px 0px #c3c3c3")
+        //$("#taller"+_id+"").css("background-color", "rgb(255, 255, 255)")
+        //$("#taller"+_id+"").css("color", "#333333")
+        //$("#taller"+_id+"").css("border", "1px solid #edeff0")
+        $("#taller"+_id+"").css("cursor", "not-allowed")
+        $("#taller"+_id+"").css("transform", "none")
     }
+    else
+    {*/
+        switch($(id).css("background-color"))
+        {
+            case "rgb(255, 255, 255)":
+            {
+                $("#taller"+_id+"").css("box-shadow", "2px 2px 2px 0px #c3c3c3")
+                $("#taller"+_id+"").css("background-color", "#c62828")
+                $("#taller"+_id+"").css("color", "#ffffff")
+                $("#taller"+_id+"").css("border", "1px solid #c62828")
+            }
+            break
+            case "rgb(198, 40, 40)":
+            {
+                $("#taller"+_id+"").css("box-shadow", "2px 2px 2px 0px #c3c3c3")
+                $("#taller"+_id+"").css("background-color", "rgb(255, 255, 255)")
+                $("#taller"+_id+"").css("color", "#333333")
+                $("#taller"+_id+"").css("border", "1px solid #edeff0")
+            }
+            break
+        }
+    //}
     console.log(tabla_talleres[_id]["id"])
 }
 
@@ -529,13 +555,13 @@ function tallerSeleccionado()
             {
                 var tabla = JSON.parse(respuesta)
                 tabla_talleres_seleccionados = tabla
-                console.log(tabla_talleres_seleccionados)
+                //console.log(tabla_talleres_seleccionados)
                 
                 mostrarTalleres()
                 mostrarMisTalleres()
                 
             })
-            console.log("posicion " + x + " está seleccionado")
+            //console.log("posicion " + x + " está seleccionado")
         }
     }
 }
@@ -562,11 +588,11 @@ function mostrarMisTalleres()
 
                     var codigo = ""+
                     "<table class='tabla_MisTalleres'>"+
-                        "<tr>"+
+                        "<tr class='titulos'>"+
                             "<td><b>Hora<b></td>"+
                             "<td><b>Fecha<b></td>"+
                             "<td><b>Taller<b></td>"+
-                            "<td class='ocultar_movil'><b>Instructor<b></td>"+
+                            //"<td class='ocultar_movil'><b>Instructor<b></td>"+
                             "<td><b>Sala<b></td>"+
                             "<td></td>"+
                         "</tr>"
@@ -587,7 +613,7 @@ function mostrarMisTalleres()
                             "<td>" + hora + "</td>"+
                             "<td>" + fecha + "</td>"+
                             "<td>" + tabla[x]["titulo"] + "</td>"+
-                            "<td  class='ocultar_movil'>" + tabla[x]["instructor"] + "</td>"+
+                            //"<td  class='ocultar_movil'>" + tabla[x]["instructor"] + "</td>"+
                             "<td>" + tabla[x]["sala"] + "</td>"+
                             "<td><img class='icono' src='imagenes/eliminar.png' onclick='eliminar_taller(" + x + ")'></td>"+
                         "</tr>"
@@ -596,9 +622,8 @@ function mostrarMisTalleres()
                     "</table>"
 
                     $("#misTalleres").html(codigo)
-                    
-                    console.log(tabla)
-                    console.table(tabla)
+                    //console.log(tabla)
+                    //console.table(tabla)
                 }
                 break
         }

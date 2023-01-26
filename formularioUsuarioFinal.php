@@ -25,21 +25,13 @@
                 <input type="email" id="correo" maxlength="55"><br>
                 <?php
                 echo 
-                "<div>
-                    <label class='container'>Soy Usuario Final
-                        <input type='checkbox' id='usuarioFinal' name='checkbox'>
-                        <span class='checkmark'></span>
-                    </label>
-                </div>
-                <div id='contenedorCuenta'>
+                "<div id='contenedorCuenta'>
                     ¿Cuál es su cargo en su compañía? <span class='asterisco'>*</span><br>
                     <input type='text' id='cargo' maxlength='45'><br>
                     RFC <span class='asterisco'>*</span><br>
                     <input type='text' id='rfc' maxlength='20'><br>
                     Empresa (Razón Social) <span class='asterisco'>*</span><br>
                     <input type='text' id='empresa' maxlength='255'><br>
-                    Su número de cuenta en SYSCOM <span class='asterisco'>*</span><br>
-                    <input type='number' id='cuenta'><br>
                 </div>";
                 ?>
                 País <span class='asterisco'>*</span><br>

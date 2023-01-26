@@ -180,11 +180,15 @@ textarea
 
 .tabla_MisTalleres
 {
-    line-height: 25px;
+    line-height: 30px;
     font-size: 14px;
     width: 104%;
     margin-left: -2%;
     padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    background-color: rgba(0, 0, 0, 0.02);
+    border-collapse: collapse;
+    text-align: center;
 }
 
 tr
@@ -195,6 +199,12 @@ tr
 .ocultar_movil
 {
     display: none;
+}
+
+.titulos
+{
+    background-color: #1e1e1e;
+    color: white;
 }
 
 /* Hide the browser's default checkbox */ 
@@ -384,8 +394,10 @@ tr
 
     .tabla_MisTalleres
     {
-        width: 115%;
-        margin-left: -7.5%;
+        width: 100%;
+        margin-left: 0;
+        /*width: 115%;
+        margin-left: -7.5%;*/
         padding: 0;
     }
     
