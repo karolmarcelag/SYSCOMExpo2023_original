@@ -12,7 +12,11 @@ $(document).ready(function()
     })
     $("#guardar").click(function(_e)
     {
-        registrar_usuario()
+        registrar_usuario(1)
+    })
+    $("#guardar_usuarioFinal").click(function(_e)
+    {
+        registrar_usuario(2)
     })
     $("#buscar").click(function(_e)
     {
@@ -44,10 +48,25 @@ function autofocus()
     $("#entradaqr").focus()
 }
 
-function registrar_usuario()
+function registrar_usuario(_id)
 {
     if(validar() == true)
     {
+        var numero_cliente
+        switch(_id)
+        {
+            case 1:
+                {
+                    numero_cliente = $("#cuenta").val()
+                }
+                break
+            case 2:
+                {
+                    numero_cliente = 100
+                }
+                break
+        }
+        
         $("#esperar").html("<div class='loadingio-spinner-rolling-k7dywir643' style='position: absolute; top: 0; margin-left: 50%; left: -100px; margin-top: 300px; z-index: 100;'><div class='ldio-7vvtb13lcc'><div></div></div></div>")
         $('body, html').animate({ scrollTop: '0px' }, 300);
         $("#guardar").css({"display":"none"})
@@ -59,7 +78,7 @@ function registrar_usuario()
             cargo: $("#cargo").val(),
             rfc: $("#rfc").val(),
             empresa: $("#empresa").val(),
-            cuenta: $("#cuenta").val(),
+            cuenta: numero_cliente,
             pais: $("#pais").val(),
             estado: $("#estado").val(),
             ciudad: $("#ciudad").val(),

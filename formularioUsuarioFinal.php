@@ -316,7 +316,7 @@
                 Teléfono de contacto <span class="asterisco">*</span><br>
                 <input type="text" id="telefono" maxlength="15"><br>
             </div>
-            <button id="guardar">Guardar</button>
+            <button id="guardar_usuarioFinal">Guardar</button>
             <span id="esperar"></span>
         </div>
         <span id="imagenQR"></span>
