@@ -196,11 +196,6 @@ tr
     border-bottom: 1px solid #edeff0;
 }
 
-.ocultar_movil
-{
-    display: none;
-}
-
 .titulos
 {
     background-color: #1e1e1e;
@@ -399,10 +394,5 @@ tr
         /*width: 115%;
         margin-left: -7.5%;*/
         padding: 0;
-    }
-    
-    .ocultar_movil
-    {
-        display: block;
     }
 }
