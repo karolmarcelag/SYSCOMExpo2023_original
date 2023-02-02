@@ -28,7 +28,7 @@ if($nombre != "")
     $tabla = mysqli_fetch_array($consulta);
     if($tabla["cuenta"] == 100)
     {
-        $arreglo2[0]["empresa"] = "<h1>INVITADO</h1>";
+        $arreglo2[0]["empresa"] = "<h3>INVITADO</h3>";
     }
     else
     {
