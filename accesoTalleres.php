@@ -21,12 +21,10 @@
                 </select>
                 <div id='contenedorLectura' style='display:none'>
                     Lectura QR<br>
-                    <input type="text" id="lectura_qr" onkeypress='lectura()'><br>
+                    <input type="text" id="lectura_qr"><br>
                 </div>
                 <span id='accesoTaller'></span>
             </div>
-            <span id="esperar"></span>
         </div>
-        <span id="imagenQR"></span>
     </body>
 </html>

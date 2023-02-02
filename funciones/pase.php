@@ -53,7 +53,8 @@
         </style>
     </head>
 
-    <body onload="window.print(); window.close();">
+    <!--<body onload="window.print(); window.close();">-->
+    <body onload="window.print();">
         <div class="cuadroInfo">
             <div class="nombre"><?php echo $_GET["nombre"] ?></div>
             <div class="apellido"><?php echo $_GET["apellido"] ?></div>

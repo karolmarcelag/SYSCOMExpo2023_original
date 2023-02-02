@@ -202,6 +202,24 @@ tr
     color: white;
 }
 
+#alerta
+{
+    background-color: #c62828;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    height: 40%;
+    padding: 5px;
+    margin-top: 16px;
+}
+
+#texto_alerta
+{
+    display: block;
+    margin-top: 3%;
+}
+
 /* Hide the browser's default checkbox */ 
 .container input
 {

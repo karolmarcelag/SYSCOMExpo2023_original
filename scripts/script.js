@@ -515,8 +515,7 @@ function mostrarTalleres()
                                 "<div class='div_instructor'><small>Impartido por:</small><br><span>"+ tabla[x]["instructor"] +"</span></div>"+
                                 "<div class='izquierda'><small>Sala: </small>"+ tabla[x]["sala"] +"</div><div class='derecha'><small>Capacidad: </small>"+ tabla[x]["registrados"] +"/"+ tabla[x]["capacidad"] +"</div><br>"+
                             "</div>"+
-                        "</div>"
-                        
+                        "</div>"  
                     }
                     $("#todosTalleres").html(codigo)
 
@@ -529,7 +528,7 @@ function mostrarTalleres()
 function seleccionar(_id)
 {
     var id = "#taller" + _id
-    
+
     switch($(id).css("background-color"))
     {
         case "rgb(255, 255, 255)":
@@ -572,7 +571,6 @@ function tallerSeleccionado()
                 
                 mostrarTalleres()
                 mostrarMisTalleres()
-                
             })
             //console.log("posicion " + x + " está seleccionado")
         }
@@ -666,7 +664,7 @@ function eliminar_taller(_id)
                 {
                     alert("Ocurrió un error, por favor contacte al administrador.\n\nError: " + respuesta)
                 }
-                break
+                    break
             }
         })
     }
@@ -690,14 +688,13 @@ function cargarTalleresQR()
             var hora = tabla[x]["hora"]
             var titulo = tabla[x]["titulo"]
 
-            $("#taller_seleccionado").append("<option value='"+id_taller+"'>"+dia+" -- "+hora+" -- "+titulo+"</option>");
+            $("#taller_seleccionado").append("<option value='"+ id_taller +"'>"+ dia +" -- "+ hora +" -- "+ titulo +"</option>");
         }
     })
 }
 
 function taller_seleccionado()
 {
-    lectura()
     var tallerSeleccionado = $("#taller_seleccionado").val()
     if(tallerSeleccionado != "")
     {
@@ -720,27 +717,42 @@ function lectura()
     },
     function(respuesta)
     {
-        console.log(respuesta)
-        /*var datos = JSON.parse(respuesta)
-        var nombre = datos[0]["nombre"]
-        var apellido = datos[0]["apellido"]
-        var empresa = datos[0]["empresa"]
-        var cargo = datos[0]["cargo"]
-        var correo = datos[0]["correo"]
-        if()
+        try
         {
-            var codigo = "<span style='font-size:40px; text-align:center; margin-top:25px; margin-bottom:63px;'>Gracias " + nombre + " por acompañarnos a SYSCOMExpo 2023 Cd. México</span>"
-        }
-        else
-        {
-            var codigo = "<span style='font-size:40px; text-align:center; margin-top:25px; margin-bottom:63px;'>Gracias " + nombre + " por acompañarnos a SYSCOMExpo 2023 Cd. México</span>"
-        }
+            var tabla = JSON.parse(respuesta)
         
-        $("#accesoTaller").html(codigo)
-        $("#lectura_qr").val("")
-        $("#lectura_qr").focus()
+            var nombreCompleto = tabla[0]["nombre"] + " " + tabla[0]["apellido"]
+            var resultado = tabla[0]["respuesta"]
+            var codigo = ""
 
-        /*var url = "funciones/pase.php?nombre=" + nombre + "&apellido=" + apellido + "&empresa=" + empresa + "&cargo=" + cargo + "&correo=" + correo;
-        window.open(url, '_blank');*/
+            switch(resultado)
+            {
+                case 1:
+                {
+                    codigo+=
+                    "<div id='alerta' style='background-color: #4caf50;'><span id='texto_alerta'>Bienvenido<br><br>"+ nombreCompleto +"</span></div>"
+                }
+                    break
+                case -1:
+                {
+                    codigo+=
+                    "<div id='alerta'><span id='texto_alerta'>No Registrado<br><br>"+ nombreCompleto +"</span></div>"
+                }
+                    break
+            }
+
+            $("#accesoTaller").html(codigo)
+            $("#lectura_qr").val("")
+            $("#lectura_qr").focus()
+        }
+        catch(err)
+        {
+            var codigo =
+            "<div id='alerta'><span id='texto_alerta'>QR Inválido</span></div>"
+
+            $("#accesoTaller").html(codigo)
+            $("#lectura_qr").val("")
+            $("#lectura_qr").focus()
+        }
     })
 }
